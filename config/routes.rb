@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   root 'users#index'
-  resources :skill_tags
+  resources :skill_tags do
+    member do
+      get 'add_relation'
+    end
+  end
   devise_for :users
 
   devise_scope :user do

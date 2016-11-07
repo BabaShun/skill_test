@@ -4,6 +4,8 @@
   <strong>Name:</strong>
   <%= @skill_tag.name %>
 </p>
+<%= link_to "このスキルを登録する", add_relation_skill_tag_path %>
+
 
 <%= link_to 'Edit', edit_skill_tag_path(@skill_tag) %> |
 <%= link_to 'Back', skill_tags_path %>

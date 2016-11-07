@@ -9,6 +9,15 @@
   </head>
 
   <body>
+    <nav>
+      <% if user_signed_in? %>
+        <%= link_to 'ログアウト', logout_path %>
+        <%= link_to 'スキル一覧', skill_tags_path %>
+        <%= link_to 'ユーザー一覧', users_path %>
+      <% else %>
+        <%= link_to "ログイン", login_path %>
+        <%= link_to "新規登録", new_user_registration_path %>
+      <% end %>
     <%= yield %>
   </body>
 </html>

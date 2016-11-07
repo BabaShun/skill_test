@@ -61,8 +61,5 @@ class User
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  property :name, type: String
-  property :email, type: String
-
   has_many :both, :skill_tags, type: 'skill_tags'
 end

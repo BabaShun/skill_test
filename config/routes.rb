@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
+  root 'users#index'
   resources :skill_tags
   devise_for :users
-  resources :users
+
+  devise_scope :user do
+    get 'login' => 'devise/sessions#new'
+    post 'login' => 'devise/sessions#create'
+    get 'logout' => 'devise/sessions#destroy'
+  end
+  resources :users, only: [:index, :show]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

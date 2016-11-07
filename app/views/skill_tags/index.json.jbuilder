@@ -1,0 +1,1 @@
+json.array! @skill_tags, partial: 'skill_tags/skill_tag', as: :skill_tag

@@ -1,11 +1,26 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @skill_tag.name %>
-</p>
-<%= link_to "このスキルを登録する", add_relation_skill_tag_path %>
-
-
-<%= link_to 'Edit', edit_skill_tag_path(@skill_tag) %> |
-<%= link_to 'Back', skill_tags_path %>
+<div class="skill_detail_container">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-1 col-md-10 col-md-offset-1">
+        <div class="skill_detail_head">
+          <h1><%= @skill_tag.name %></h1>
+          <p>333人が登録済み</p>
+          <%= link_to "このスキルを登録する", add_relation_skill_tag_path, class: 'btn-lg btn-primary' %>
+        </div>
+        <div class="skill_users">
+          <p>このスキルを登録している人</p>
+          <div class="row">
+            <% 5.times do %>
+              <div class="col-md-4">
+                <div class="user_detail text-center">
+                  <h2>Username</h2>
+                  <p>point</p>
+                </div>
+              </div>
+            <% end %>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

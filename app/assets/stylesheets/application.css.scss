@@ -15,3 +15,15 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.navbar{
+  border-bottom: 2px solid gray;
+}
+
+.text-center{
+  text-align: center !important;
+}
+
+.padding-bottom-30{
+  padding-bottom: 30px !important;
+}

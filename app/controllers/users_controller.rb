@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @skill_tags = @user.skill_tags
   end
 
   # GET /users/new

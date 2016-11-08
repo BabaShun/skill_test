@@ -9,16 +9,26 @@
   </head>
 
   <body>
-    <nav>
-      <% if user_signed_in? %>
-        <%= link_to 'ログアウト', logout_path %>
-        <%= link_to 'スキル一覧', skill_tags_path %>
-        <%= link_to 'ユーザー一覧', users_path %>
-        <%= current_user.email %>
-      <% else %>
-        <%= link_to "ログイン", login_path %>
-        <%= link_to "新規登録", new_user_registration_path %>
-      <% end %>
+    <div class="container">
+      <nav class="navbar navbar-light bg-faded">
+        <a class="navbar-brand" href="/">SKILLCHEKER</a>
+        <ul class="nav navbar-nav">
+          <% if user_signed_in? %>
+            <li><%= link_to 'マイページ', user_path(current_user) %></li>
+            <li><%= link_to 'スキル一覧', skill_tags_path %></li>
+            <li><%= link_to 'ユーザー一覧', users_path %></li>
+            <li><%= link_to 'ログアウト', logout_path %></li>
+          <% else %>
+            <li><%= link_to "ログイン", login_path %></li>
+            <li><%= link_to "新規登録", new_user_registration_path %></li>
+          <% end %>
+        </ul>
+        <!-- <form class="form-inline float-xs-right">
+          <input class="form-control" type="text" placeholder="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form> -->
+      </nav>
+    </div>
     <%= yield %>
   </body>
 </html>

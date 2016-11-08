@@ -1,13 +1,16 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @user.username %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<%= link_to 'Back', users_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-1 col-md-10">
+      <h1><%= @user.username %></h1>
+      <h2>スキル一覧</h2>
+      <% @skill_tags.each do |skill_tag| %>
+        <%= skill_tag[1] %>
+        <%= skill_tag[0].name %><br>
+      <% end %>
+      <%= form_tag(controller: "users", action: "add_skill" )do %>
+        <%= text_field_tag :skill_name %>
+        <%= submit_tag 'スキルを追加する' %>
+      <% end %>
+    </div>
+  </div>
+</div>

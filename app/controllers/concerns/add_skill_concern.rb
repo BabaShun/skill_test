@@ -3,7 +3,11 @@ module AddSkillConcern
 
   def create_relation(user, skill)
     user.skill_tags << skill
-    skill.users << user
+    begin
+      skill.users.find(user)
+    rescue
+      skill.users << user
+    end
   end
 
 end

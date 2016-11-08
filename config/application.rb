@@ -19,10 +19,13 @@ Bundler.require(*Rails.groups)
 
 module SkillTest
   class Application < Rails::Application
-    
+
     config.generators do |g|
       g.orm             :neo4j
     end
+    config.neo4j.session_type = :server_db
+    config.neo4j.session_path = ENV["GRAPHENEDB_URL"] || 'http://localhost:7474'
+    config.neo4j.session_path = ENV["GRAPHSTORY_URL"] || 'http://localhost:7474'
 
     # Configure where the embedded neo4j database should exist
     # Notice embedded db is only available for JRuby

@@ -5,4 +5,5 @@ module AddSkillConcern
     user.skill_tags << skill
     skill.users << user
   end
+
 end

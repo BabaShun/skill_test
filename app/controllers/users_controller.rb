@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :add_skill]
+  include AddSkillConcern
 
   # GET /users
   # GET /users.json
@@ -10,7 +11,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @skill_tags = @user.skill_tags
+    @skill_tags = @user.skill_tags.to_a
+    @skill_tags = @skill_tags.inject(Hash.new(0)){|hash, a| hash[a] += 1; hash}
   end
 
   # GET /users/new
@@ -60,6 +62,12 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def add_skill
+    skill_tag = SkillTag.find_or_create(params[:skill_name])
+    create_relation(@user, skill_tag)
+    redirect_to @user
   end
 
   private

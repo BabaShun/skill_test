@@ -3,3 +3,14 @@
     <div class="col-md-offset-1 col-md-10">
       <h1><%= @user.username %></h1>
       <h2>スキル一覧</h2>
+      <% @skill_tags.each do |skill_tag| %>
+        <%= skill_tag[1] %>
+        <%= skill_tag[0].name %><br>
+      <% end %>
+      <%= form_tag(controller: "users", action: "add_skill" )do %>
+        <%= text_field_tag :skill_name %>
+        <%= submit_tag 'スキルを追加する' %>
+      <% end %>
+    </div>
+  </div>
+</div>

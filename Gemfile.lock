@@ -81,6 +81,7 @@ GEM
     faraday_middleware-multi_json (0.0.6)
       faraday_middleware
       multi_json
+    ffaker (2.2.0)
     ffi (1.9.14)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
@@ -239,6 +240,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   devise-neo4j
+  ffaker
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)

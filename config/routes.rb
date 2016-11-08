@@ -5,12 +5,15 @@ Rails.application.routes.draw do
       get 'add_relation'
     end
   end
-  devise_for :users
+  devise_for :users, :controllers => {
+    :registrations => 'users/registrations',
+    :sessions => 'users/sessions'
+  }
 
   devise_scope :user do
-    get 'login' => 'devise/sessions#new'
-    post 'login' => 'devise/sessions#create'
-    get 'logout' => 'devise/sessions#destroy'
+    get 'login' => 'users/sessions#new'
+    post 'login' => 'users/sessions#create'
+    get 'logout' => 'users/sessions#destroy'
   end
   resources :users, only: [:index, :show] do
     member do

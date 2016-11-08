@@ -1,16 +1,26 @@
-<div class="container">
+<div class="user_detail_container">
+  <div class="container">
   <div class="row">
     <div class="col-md-offset-1 col-md-10">
       <h1><%= @user.username %></h1>
       <h2>スキル一覧</h2>
       <% @skill_tags.each do |skill_tag| %>
-        <%= skill_tag[1] %>
-        <%= skill_tag[0].name %><br>
+        <div class="skill_container">
+          <div class="skil_count margin-right-15">
+            <div class="skill_num">
+              <%= skill_tag[1] %>
+            </div>
+          </div>
+          <div class="skill_name">
+            <%= skill_tag[0].name %><br>
+          </div>
+        </div>
       <% end %>
       <%= form_tag(controller: "users", action: "add_skill" )do %>
-        <%= text_field_tag :skill_name %>
-        <%= submit_tag 'スキルを追加する' %>
+        <br><%= text_field_tag :skill_name %>
+        <%= submit_tag 'スキルを追加する', class: 'submit-button' %>
       <% end %>
     </div>
+  </div>
   </div>
 </div>

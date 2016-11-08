@@ -9,7 +9,7 @@
               <div class="skill_tags text-center">
                 <h2><%= skill_tag.name %></h2>
                 <div class="num_container">
-                  <p>33人が登録</p>
+                  <p><%= skill_tag.users.to_a.count %>人が登録済み</p>
                 </div>
               </div>
             <% end %>

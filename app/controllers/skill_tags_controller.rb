@@ -7,6 +7,7 @@ class SkillTagsController < ApplicationController
   end
 
   def show
+    @users = @skill_tag.users.to_a
   end
 
   def new

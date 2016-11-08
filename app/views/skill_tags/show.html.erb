@@ -5,17 +5,18 @@
       <div class="col-md-offset-1 col-md-10 col-md-offset-1">
         <div class="skill_detail_head">
           <h1><%= @skill_tag.name %></h1>
-          <p>333人が登録済み</p>
+          <p><%= @users.count %>人が登録済み</p>
           <%= link_to "このスキルを登録する", add_relation_skill_tag_path, class: 'btn-lg btn-primary' %>
         </div>
         <div class="skill_users">
           <p>このスキルを登録している人</p>
           <div class="row">
-            <% 5.times do %>
+            <% @users.each do |user| %>
               <div class="col-md-4">
                 <div class="user_detail text-center">
-                  <h2>Username</h2>
-                  <p>point</p>
+                  <%= link_to user do %>
+                    <h2><%= user.username %></h2>
+                  <% end %>
                 </div>
               </div>
             <% end %>

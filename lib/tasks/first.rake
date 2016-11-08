@@ -7,7 +7,7 @@ namespace :first do
     skills.each do |skill|
       SkillTag.create(name: skill)
     end
-    10.times do
+    200.times do
       User.create(username: FFaker::Name.name, email: FFaker::Internet.email, password: 'hogehoge', password_confirmation: 'hogehoge')
     end
   end

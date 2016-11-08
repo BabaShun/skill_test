@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @skill_tags = @user.skill_tags.to_a
-    @skill_tags = @skill_tags.inject(Hash.new(0)){|hash, a| hash[a] += 1; hash}
+    @skill_tags = @skill_tags.inject(Hash.new(0)){|hash, a| hash[a] += 1; hash}.sort{ |a,b| b[1] <=> a[1] }
   end
 
   # GET /users/new

@@ -17,8 +17,8 @@
         </div>
       <% end %>
       <%= form_tag(controller: "users", action: "add_skill" )do %>
-        <%= text_field_tag :skill_name %>
-        <%= submit_tag 'スキルを追加する' %>
+        <br><%= text_field_tag :skill_name %>
+        <%= submit_tag 'スキルを追加する', class: 'submit-button' %>
       <% end %>
     </div>
   </div>

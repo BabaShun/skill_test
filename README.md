@@ -1,24 +1,19 @@
 # README
+Wantedlyインターン選考課題です。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 課題1「Wantedly プロフィールページの「スキル・特徴」の再現」
 
-Things you may want to cover:
+- フレームワーク　Ruby on Rails
+- データベース Neo4j
 
-* Ruby version
+### 備考
+Herokuでneo4jをうまく利用することができず、デプロイができませんでした。お手数ですが、ローカルでの動作環境をお願い頂けないでしょうか。申し訳ありません。<br>
+またなぜかseedタスクが消えてしまったため、初期データの挿入は rake first:createというタスクで行っています。
 
-* System dependencies
+## 課題2「あなたの技術を証明するURLを提出してください」
 
-* Configuration
+http://obenkyo-rescue.com/
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+上記サービスのサーバーサイドの5割、フロントの3割ほどのコーディング、AWSの構築を行いました。<br>
+Ruby on Rails, MySQlを使用しています。<br>
+sorcery, devise, carrierwave, fog, kaminariなどのgemを使用して開発したほかに、google-analyticsやslackとの連携なども行いました。

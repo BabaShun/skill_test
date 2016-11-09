@@ -10,6 +10,11 @@ Wantedlyインターン選考課題です。
 Herokuでneo4jをうまく利用することができず、デプロイができませんでした。お手数ですが、ローカルでの動作確認をお願い頂けないでしょうか。申し訳ありません。<br>
 またなぜかseedタスクが消えてしまったため、初期データの挿入は rake first:createというタスクで行っています。
 
+### 動作イメージ
+![タイトル](https://github.com/BabaShun/skill_test/blob/master/github_images/readme1.gif)
+<br>
+![タイトル](https://github.com/BabaShun/skill_test/blob/master/github_images/readme2.gif)
+
 ## 課題2「あなたの技術を証明するURLを提出してください」
 
 http://obenkyo-rescue.com/
